@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html>
-
 <body>
-    <h1>My First Heading</h1>
-    <p>My first paragraph.</p>
-</body>
+  <h1 id="name"></h1>
+  <p id="designation"></p>
 
+  <script>
+    // Parse the query string and extract the parameter values
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const name = urlParams.get('na');
+    const designation = urlParams.get('des');
+
+    // Set the text content of the HTML elements using the parameter values
+    document.getElementById("name").textContent = "My name is " + name;
+    document.getElementById("designation").textContent = "My designation is " + designation;
+  </script>
+</body>
 </html>
+
